@@ -34,22 +34,32 @@ cmds.file(new=True, force=True)
 ground = cmds.polyPlane(name="ground", width=60, height=60,
                         subdivisionsX=1, subdivisionsY=1)[0]
 
-# ---------------------------------------------------------------------------
-# TODO: Build your scene below by calling functions from scene_functions.
-#
-# Example calls (uncomment and modify once your functions are implemented):
-#
-#   sf.create_building(width=5, height=10, depth=5, position=(-10, 0, 8))
-#   sf.create_tree(position=(3, 0, -5))
-#   sf.create_fence(length=12, post_count=7, position=(-6, 0, -3))
-#   sf.create_lamp_post(position=(8, 0, 2))
-#
-#   # Place 8 trees in a circle of radius 15:
-#   sf.place_in_circle(sf.create_tree, count=8, radius=15)
-#
-# Remember: call each function at least once, and aim for 15+ objects.
-# ---------------------------------------------------------------------------
+# Create a row of buildings to represent a small city block
 
+# Buildings 
+sf.create_building(width=5, height=12, depth=5, position=(-10, 0, 10))
+sf.create_building(width=6, height=10, depth=4, position=(-5, 0, 12))
+sf.create_building(width=4, height=8, depth=4, position=(0, 0, 10))
+sf.create_building(width=7, height=14, depth=5, position=(5,0,12))
+
+# Fence to define the park boundary
+sf.create_fence(length=15, post_count=8, position=(-8, 0, -5))
+
+# Lamp posts
+sf.create_lamp_post(position=(8, 0, 0))
+sf.create_lamp_post(position=(10, 0, 3))
+sf.create_lamp_post(position=(12, 0, -2))
+
+#Bench
+sf.create_bench(position=(0, 0, -8))
+sf.create_bench(position=(3, 0, -8))
+
+# Trees in a circular park layout
+sf.place_in_circle(sf.create_tree, count=8, radius=12)
+
+# Extra trees
+sf.create_tree(position=(-12, 0, -10))
+sf.create_tree(position=(12, 0, -10))
 
 # ---------------------------------------------------------------------------
 # Final viewport framing (do not remove).
